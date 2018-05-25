@@ -18,22 +18,32 @@ from email.mime.text import MIMEText
 
 
 
-#### Create variables ####
+"""Create variables
 
-## Replace the path below with the path to your staging server service's _alllayers folder.
-stagingServerLevelFoldersLocation = "[Your local drive letter on staging server]:\\arcgisserver\\directories\\arcgiscache\\[Your Map Service Name]\\Layers\\_alllayers"
+Each of the variable comments below reference the config.json file
+located in the program's root"""
 
-## Replace the path below with the path to your production server services Layers folder (not all the way to the _alllayers folder)
-productionServerLayersFoldersLocation = "[Your local drive letter on production server]:\\arcgisserver\\directories\\arcgiscache\\[Your Map Service Name]\\Layers"
+with open ('config.json') as jsonFile:
+    config = json.load(jsonFile)
+    ## Replace the path below with the path to your staging server service's _alllayers folder.
+    ## stagingServerCacheLocation = "[Your local drive letter on staging server]:\\arcgisserver\\directories\\arcgiscache\\[Your Map Service Name]\\Layers\\_alllayers"
+    stagingServerCacheLocation = config["stagingServerCacheLocation"]
 
-## Replace the path below with the path to your staging server's ArcGIS connection file
-connectionFile = r"[Your local drive letter]:\Users\[Your OS user name]\AppData\Roaming\ESRI\Desktop10.1\ArcCatalog\\"
+    ## Replace the path below with the path to your production server services Layers folder (not all the way to the _alllayers folder)
+    ## productionServerCacheLocation = "[Your local drive letter on production server]:\\arcgisserver\\directories\\arcgiscache\\[Your Map Service Name]\\Layers"
+    productionServerCacheLocation = ["productionServerCacheLocation"]
 
-## Replace the path below with the path to your staging server's ArcGIS Server admin connection
-server = "[Your server name] (admin)"
+    ## Replace the path below with the path to your staging server's ArcGIS connection file
+    ## connectionFile = r"[Your local drive letter]:\Users\[Your OS user name]\AppData\Roaming\ESRI\Desktop10.1\ArcCatalog\\"
+    connectionFile = ["connectionFile"]
 
-## Replace the path below
-serviceName = "\\[Your service name].MapServer"
+    ## Replace the path below with the path to your staging server's ArcGIS Server admin connection
+    ## server = "[Your server name] (admin)"
+    server = ["server"]
+
+    ## Replace the path below
+    ## serviceName = "\\[Your service name].MapServer"
+    serviceName = ["serviceName"]
 
 inputService = connectionFile + server + serviceName
 
