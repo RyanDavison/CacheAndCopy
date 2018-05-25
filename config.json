@@ -1,0 +1,7 @@
+{
+"stagingServerCacheLocation": "[Your local drive letter on staging server]:\\arcgisserver\\directories\\arcgiscache\\[Your Map Service Name]\\Layers\\_alllayers",
+"productionServerCacheLocation": "[Your local drive letter on production server]:\\arcgisserver\\directories\\arcgiscache\\[Your Map Service Name]\\Layers",
+"connectionFile": r"[Your local drive letter]:\Users\[Your OS user name]\AppData\Roaming\ESRI\Desktop10.1\ArcCatalog\\",
+"server": "[Your server name] (admin)",
+"serviceName": "\\[Your service name].MapServer"
+}
